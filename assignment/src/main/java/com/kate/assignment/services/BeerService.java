@@ -19,7 +19,12 @@ public class BeerService {
     // get all Beers with their id, brand, and Price
     public List<BeerWithDiscount> getAllBeers() {
         var holder = beerRepository.getAllBeers();
-        return holder;
+
+        List<BeerWithDiscount> beerWithDiscounts = holder.stream()
+                .map(BeerWithDiscount::new)
+                .collect(Collectors.toList());
+
+        return beerWithDiscounts;
     }
 
     // take in beer id & quantity, get required # for discount, determine discount.
@@ -33,24 +38,15 @@ public class BeerService {
 
     private BeerWithDiscount getDiscountDetails(Integer beerId) {
         var holder = beerRepository.getDiscountDetails(beerId);
-        return holder;
+
+        BeerWithDiscount beerWithDiscount = new BeerWithDiscount(holder);
+        return beerWithDiscount;
     }
 
     private BeerWithDiscount determineDiscount(Integer beerId, Integer beerQuantity) {
 
         var discountDetails = getDiscountDetails(beerId);
-
-        // Integer bottlesRequired = discountDetails.getBottlesRequired();
-        // Number discountAmount = discountDetails.getDiscountAmount();
-
-        // Number applicableDiscounts = beerQuantity / bottlesRequired;
-
-        // Number discountGiven = applicableDiscounts.doubleValue() *
-        // discountAmount.doubleValue();
-
-        Number discountGiven = discountDetails.calculateDiscountGiven(beerQuantity);
-
-        discountDetails.setDiscountGiven(discountGiven);
+        discountDetails.setDiscount(beerQuantity);
 
         return discountDetails;
     }
@@ -59,6 +55,5 @@ public class BeerService {
     // determine discount.
 
     // take in beer id, update bottles required and|or discount amount
-
     // add new beer + beerDiscount object.
 }

@@ -5,7 +5,7 @@ public class BeerDiscountRequest {
     private Integer beerId;
     private Integer beerQuantity;
 
-    // Getters and Setters
+    // getters and setters
     public Integer getBeerId() {
         return beerId;
     }

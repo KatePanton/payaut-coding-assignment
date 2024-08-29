@@ -26,14 +26,8 @@ public class BeerController {
         return beerService.getAllBeers();
     }
 
-    // @GetMapping("/getDiscount/{beerId}/{beerQuantity}")
-    // public Number getAllBeers(@PathVariable Integer beerId, @PathVariable Integer
-    // beerQuantity) {
-    // return beerService.getDiscount(beerId, beerQuantity);
-    // }
-
     @GetMapping("/getDiscounts")
-    public List<BeerWithDiscount> getAllBeers(@RequestBody List<BeerDiscountRequest> beerDiscountRequests) {
+    public List<BeerWithDiscount> getBeerDiscount(@RequestBody List<BeerDiscountRequest> beerDiscountRequests) {
         return beerService.getDiscount(beerDiscountRequests);
     }
 
