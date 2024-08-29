@@ -2,8 +2,9 @@ package com.kate.assignment.models.dtos;
 
 public class BreadDiscountRequest {
 
-    private Integer breadId;
+    public Integer breadId;
     public Integer breadAge;
+    public Integer breadQuantity = 1;
 
     // Getters and Setters
     public Integer getBreadId() {
@@ -20,5 +21,13 @@ public class BreadDiscountRequest {
 
     public void setBreadAge(Integer breadAge) {
         this.breadAge = breadAge;
+    }
+
+    public Integer getBreadQuantity() {
+        return breadQuantity != null ? breadQuantity : 1;
+    }
+
+    public void setBreadQuantity(Integer breadQuantity) {
+        this.breadQuantity = breadQuantity;
     }
 }

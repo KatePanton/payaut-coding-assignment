@@ -18,17 +18,13 @@ public interface VegWithDiscountInterface {
 
     void setMinimumWeight(Integer MinimumWeight);
 
-    Integer getMaximumWeight();
-
-    void setMaximumWeight(Integer MaximumWeight);
-
     Number getDiscountPercentage();
 
     void setDiscountPercentage(Number DiscountPercentage);
 
-    Integer getVegetableQuantity();
+    Integer getVegetableWeight();
 
-    void setVegetableQuantity(Integer VegetableQuantity);
+    void setVegetableWeight(Integer VegetableWeight);
 
     Number getDiscountGiven();
 

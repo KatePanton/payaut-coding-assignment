@@ -28,21 +28,21 @@ public class VegService {
 
     public List<VegWithDiscount> getDiscount(List<VegDiscountRequest> requests) {
         return requests.stream()
-                .map(request -> determineDiscount(request.getVegetableId(), request.getVegetableQuantity()))
+                .map(request -> determineDiscount(request.getVegetableId(), request.getVegetableWeight()))
                 .collect(Collectors.toList());
     }
 
-    private VegWithDiscount getDiscountDetails(Integer vegetableId, Integer vegetableQuantity) {
-        var holder = vegetableRepository.getDiscountDetails(vegetableId, vegetableQuantity);
+    private VegWithDiscount getDiscountDetails(Integer vegetableId, Integer vegetableWeight) {
+        var holder = vegetableRepository.getDiscountDetails(vegetableId, vegetableWeight);
 
         VegWithDiscount vegetableWithDiscount = new VegWithDiscount(holder);
         return vegetableWithDiscount;
     }
 
-    private VegWithDiscount determineDiscount(Integer vegetableId, Integer vegetableQuantity) {
+    private VegWithDiscount determineDiscount(Integer vegetableId, Integer vegetableWeight) {
 
-        var discountDetails = getDiscountDetails(vegetableId, vegetableQuantity);
-        discountDetails.setDiscount(vegetableQuantity, discountDetails.DiscountPercentage);
+        var discountDetails = getDiscountDetails(vegetableId, vegetableWeight);
+        discountDetails.setDiscount(vegetableWeight, discountDetails.DiscountPercentage);
 
         return discountDetails;
     }

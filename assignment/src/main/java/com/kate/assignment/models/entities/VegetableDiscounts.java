@@ -18,7 +18,6 @@ public class VegetableDiscounts {
     public Vegetables Vegetable;
 
     public Integer MinimumWeight;
-    public Integer MaximumWeight;
     public Number DiscountPercentage;
 
     // Constructors
@@ -26,11 +25,10 @@ public class VegetableDiscounts {
     };
 
     public VegetableDiscounts(Integer vegetableDiscountId, Vegetables vegetable, Integer minimumWeight,
-            Integer maximumWeight, Number discountPercentage) {
+            Number discountPercentage) {
         this.VegetableDiscountId = vegetableDiscountId;
         this.Vegetable = vegetable;
         this.MinimumWeight = minimumWeight;
-        this.MaximumWeight = maximumWeight;
         this.DiscountPercentage = discountPercentage;
     }
 
@@ -57,14 +55,6 @@ public class VegetableDiscounts {
 
     public Integer getMinimumWeight() {
         return MinimumWeight;
-    }
-
-    public void setMaximumWeight(Integer maximumWeight) {
-        this.MaximumWeight = maximumWeight;
-    }
-
-    public Integer getMaximumWeight() {
-        return MaximumWeight;
     }
 
     public void setDiscountPercentage(Number discountPercentage) {

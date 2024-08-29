@@ -3,7 +3,7 @@ package com.kate.assignment.models.dtos;
 public class VegDiscountRequest {
 
     private Integer vegetableId;
-    private Integer vegetableQuantity;
+    private Integer vegetableWeight;
 
     // Getters and Setters
     public Integer getVegetableId() {
@@ -14,12 +14,12 @@ public class VegDiscountRequest {
         this.vegetableId = vegetableId;
     }
 
-    public Integer getVegetableQuantity() {
-        return vegetableQuantity;
+    public Integer getVegetableWeight() {
+        return vegetableWeight;
     }
 
-    public void setVegetableQuantity(Integer vegetableQuantity) {
-        this.vegetableQuantity = vegetableQuantity;
+    public void setVegetableWeight(Integer vegetableWeight) {
+        this.vegetableWeight = vegetableWeight;
     }
 
 }

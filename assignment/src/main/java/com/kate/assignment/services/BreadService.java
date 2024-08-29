@@ -28,7 +28,8 @@ public class BreadService {
 
     public List<BreadWithDiscount> getDiscount(List<BreadDiscountRequest> requests) {
         return requests.stream()
-                .map(request -> determineDiscount(request.getBreadId(), request.getBreadAge()))
+                .map(request -> determineDiscount(request.getBreadId(), request.getBreadAge(),
+                        request.getBreadQuantity()))
                 .collect(Collectors.toList());
     }
 
@@ -39,10 +40,11 @@ public class BreadService {
         return breadWithDiscount;
     }
 
-    private BreadWithDiscount determineDiscount(Integer breadId, Integer breadAge) {
+    private BreadWithDiscount determineDiscount(Integer breadId, Integer breadAge, Integer breadQuantity) {
 
         var discountDetails = getDiscountDetails(breadId, breadAge);
-        discountDetails.setDiscount(breadAge);
+
+        discountDetails.setDiscount(breadAge, breadQuantity, discountDetails.ExtraQuantity);
 
         return discountDetails;
     }

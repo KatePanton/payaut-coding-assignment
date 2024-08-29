@@ -27,6 +27,7 @@ public class BeerWithDiscount {
         this.BeerDiscountId = beerWithDiscountInterface.getBeerDiscountId();
         this.BottlesRequired = beerWithDiscountInterface.getBottlesRequired();
         this.DiscountAmount = beerWithDiscountInterface.getDiscountAmount();
+        this.BeerQuantity = beerWithDiscountInterface.getBeerQuantity();
         this.DiscountGiven = beerWithDiscountInterface.getDiscountGiven();
     }
 

@@ -9,34 +9,33 @@ public class BreadWithDiscount {
 
     public Integer BreadDiscountId;
 
-    public Integer DaysOld;
+    public Integer MaxAge;
 
-    public Number DiscountPercentage;
+    public Integer ExtraQuantity;
 
     public Integer BreadAge;
 
-    public Integer DiscountGiven;
-
-    // DiscountPercentage => QuantityForFree
-    // BreadQuantity
+    public Integer BreadQuantity;
 
     public BreadWithDiscount(BreadWithDiscountInterface breadWithDiscountInterface) {
         this.BreadId = breadWithDiscountInterface.getBreadId();
         this.Price = breadWithDiscountInterface.getPrice();
         this.BreadDiscountId = breadWithDiscountInterface.getBreadDiscountId();
-        this.DaysOld = breadWithDiscountInterface.getDaysOld();
-        this.DiscountPercentage = breadWithDiscountInterface.getDiscountPercentage();
+        this.MaxAge = breadWithDiscountInterface.getMaxAge();
+        this.ExtraQuantity = breadWithDiscountInterface.getExtraQuantity();
         this.BreadAge = breadWithDiscountInterface.getBreadAge();
-        this.DiscountGiven = breadWithDiscountInterface.getDiscountGiven();
+        this.BreadQuantity = breadWithDiscountInterface.getBreadQuantity();
     }
 
-    public void setDiscount(Integer BreadAge) {
-        this.BreadAge = BreadAge;
-        if (DiscountPercentage == null) {
-            this.DiscountGiven = 0;
+    public void setDiscount(Integer breadAge, Integer breadQuantity, Integer extraQuantity) {
+        this.BreadAge = breadAge;
+
+        if (extraQuantity == null) {
+            this.BreadQuantity = breadQuantity;
             return;
         }
 
-        this.DiscountGiven = 3;
+        int additionalQuantity = extraQuantity * breadQuantity;
+        this.BreadQuantity = breadQuantity + additionalQuantity;
     }
 }

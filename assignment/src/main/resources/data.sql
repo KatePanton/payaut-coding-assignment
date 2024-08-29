@@ -1,53 +1,97 @@
 -- ProductTypes
-
 INSERT INTO
     product_types (product_type_name)
-VALUES
+SELECT *
+FROM (
+  VALUES
 	('Bread'),
 	('Vegetable'),
-	('Beer');
+	('Beer')
+ )
+WHERE NOT EXISTS (
+  SELECT NULL
+  FROM product_types
+);
 
 -- Breads
 INSERT INTO
 	breads (price, product_type_id)
-VALUES
-	(1.5, 1);
+SELECT *
+FROM (
+  VALUES
+	(1.5, 1)
+ )
+WHERE NOT EXISTS (
+  SELECT NULL
+  FROM breads
+);
 
 INSERT INTO
-	bread_discounts (bread_id, days_old, discount_percentage)
-VALUES
-	(1, 0, 0),
+	bread_discounts (bread_id, max_age, extra_quantity)
+SELECT *
+FROM (
+  VALUES
 	(1, 1, 0),
-	(1, 2, 0.33),
-	(1, 3, 0.33),
-	(1, 4, 0.66),
-	(1, 5, 0.66),
-	(1, 6, 0.66);
+	(1, 3, 1),
+	(1, 6, 2)
+ )
+WHERE NOT EXISTS (
+  SELECT NULL
+  FROM bread_discounts
+);
 
 -- Vegetables
 INSERT INTO
 	vegetables (price, product_type_id)
-VALUES
-	(1, 2);
+	SELECT *
+FROM (
+  VALUES
+	(1, 2)
+ )
+WHERE NOT EXISTS (
+  SELECT NULL
+  FROM vegetables
+);
 
 INSERT INTO
-	vegetable_discounts (vegetable_id, minimum_weight, maximum_weight, discount_percentage)
-VALUES
-	(1, 0, 100, 0.05),
-	(1, 101, 500, 0.07),
-	(1, 501, 10000, 0.10);
+	vegetable_discounts (vegetable_id, minimum_weight, discount_percentage)
+	SELECT *
+FROM (
+  VALUES
+	(1, 0, 0.05),
+	(1, 100, 0.07),
+	(1, 500, 0.10)
+ )
+WHERE NOT EXISTS (
+  SELECT NULL
+  FROM vegetable_discounts
+);
 
 -- Beers
 INSERT INTO
 	beers (price, brand, product_type_id)
-VALUES
+	SELECT *
+FROM (
+  VALUES
 	(0.5, "Belgium", 3),
 	(0.5, "Dutch", 3),
-	(0.5, "German", 3);
+	(0.5, "German", 3)
+ )
+WHERE NOT EXISTS (
+  SELECT NULL
+  FROM beers
+);
 
 INSERT INTO
 	beer_discounts (beer_id, bottles_required, discount_amount)
-VALUES
+	SELECT *
+FROM (
+  VALUES
 	(1, 6, 3),
 	(2, 6, 2),
-	(3, 6, 4);
+	(3, 6, 4)
+ )
+WHERE NOT EXISTS (
+  SELECT NULL
+  FROM beer_discounts
+);

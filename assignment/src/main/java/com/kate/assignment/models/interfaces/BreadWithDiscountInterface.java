@@ -13,19 +13,19 @@ public interface BreadWithDiscountInterface {
 
     void setBreadDiscountId(Integer BreadDiscountId);
 
-    Integer getDaysOld();
+    Integer getMaxAge();
 
-    void setDaysOld(Integer DaysOld);
+    void setMaxAge(Integer MaxAge);
 
-    Number getDiscountPercentage();
+    Integer getExtraQuantity();
 
-    void setDiscountPercentage(Number DiscountPercentage);
+    void setExtraQuantity(Integer ExtraQuantity);
 
     Integer getBreadAge();
 
     void setBreadAge(Integer BreadAge);
 
-    Integer getDiscountGiven();
+    Integer getBreadQuantity();
 
-    void setDiscountGiven(Integer DiscountGiven);
+    void setBreadQuantity(Integer BreadQuantity);
 }

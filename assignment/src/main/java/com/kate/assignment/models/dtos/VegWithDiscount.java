@@ -11,11 +11,9 @@ public class VegWithDiscount {
 
     public Integer MinimumWeight;
 
-    public Integer MaximumWeight;
-
     public Number DiscountPercentage;
 
-    public Integer VegetableQuantity;
+    public Integer VegetableWeight;
 
     public Number DiscountGiven;
 
@@ -24,14 +22,13 @@ public class VegWithDiscount {
         this.Price = vegWithDiscountInterface.getPrice();
         this.VegetableDiscountId = vegWithDiscountInterface.getVegetableDiscountId();
         this.MinimumWeight = vegWithDiscountInterface.getMinimumWeight();
-        this.MaximumWeight = vegWithDiscountInterface.getMaximumWeight();
         this.DiscountPercentage = vegWithDiscountInterface.getDiscountPercentage();
-        this.VegetableQuantity = vegWithDiscountInterface.getVegetableQuantity();
+        this.VegetableWeight = vegWithDiscountInterface.getVegetableWeight();
         this.DiscountGiven = vegWithDiscountInterface.getDiscountGiven();
     }
 
-    public void setDiscount(Integer vegetableQuantity, Number discountPercentage) {
-        this.VegetableQuantity = vegetableQuantity;
+    public void setDiscount(Integer vegetableWeight, Number discountPercentage) {
+        this.VegetableWeight = vegetableWeight;
         if (DiscountPercentage == null) {
             this.DiscountGiven = 0;
             return;

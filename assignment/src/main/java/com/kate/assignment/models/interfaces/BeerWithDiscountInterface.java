@@ -26,6 +26,10 @@ public interface BeerWithDiscountInterface {
 
     void setDiscountAmount(Number DiscountAmount);
 
+    Number getBeerQuantity();
+
+    void setBeerQuantity(Number BeerQuantity);
+
     Number getDiscountGiven();
 
     void setDiscountGiven(Number DiscountGiven);
