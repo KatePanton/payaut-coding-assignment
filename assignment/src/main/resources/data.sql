@@ -46,7 +46,7 @@ INSERT INTO
 	SELECT *
 FROM (
   VALUES
-	(1, 2)
+	(0.01, 2)
  )
 WHERE NOT EXISTS (
   SELECT NULL
@@ -73,9 +73,9 @@ INSERT INTO
 	SELECT *
 FROM (
   VALUES
-	(0.5, "Belgium", 3),
-	(0.5, "Dutch", 3),
-	(0.5, "German", 3)
+	(1.5, "Belgium", 3),
+	(1.5, "Dutch", 3),
+	(1.5, "German", 3)
  )
 WHERE NOT EXISTS (
   SELECT NULL
@@ -87,9 +87,9 @@ INSERT INTO
 	SELECT *
 FROM (
   VALUES
-	(1, 6, 3),
+	(1, 6, 1),
 	(2, 6, 2),
-	(3, 6, 4)
+	(3, 6, 3)
  )
 WHERE NOT EXISTS (
   SELECT NULL

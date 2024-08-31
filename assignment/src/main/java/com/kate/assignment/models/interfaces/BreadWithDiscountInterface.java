@@ -28,4 +28,8 @@ public interface BreadWithDiscountInterface {
     Integer getBreadQuantity();
 
     void setBreadQuantity(Integer BreadQuantity);
+
+    Number getAmountPayable();
+
+    void setAmountPayable(Number AmountPayable);
 }

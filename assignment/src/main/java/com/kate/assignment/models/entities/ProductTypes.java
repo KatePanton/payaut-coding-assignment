@@ -1,5 +1,7 @@
 package com.kate.assignment.models.entities;
 
+import com.kate.assignment.models.interfaces.ProductTypeInterface;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +23,15 @@ public class ProductTypes {
     this.ProductTypeName = productTypeName;
   }
 
+  public ProductTypes(String productTypeName) {
+    this.ProductTypeName = productTypeName;
+  }
+
+  public ProductTypes(ProductTypeInterface productTypeInterface) {
+    this.ProductTypeId = productTypeInterface.getProductTypeId();
+    this.ProductTypeName = productTypeInterface.getProductTypeName();
+  }
+
   // Getters and Setters
   public Integer getProductTypeId() {
     return ProductTypeId;
@@ -37,4 +48,5 @@ public class ProductTypes {
   public void setProductTypeName(String productTypeName) {
     this.ProductTypeName = productTypeName;
   }
+
 }

@@ -1,5 +1,7 @@
 package com.kate.assignment.models.entities;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,6 +11,8 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Beers {
+    private static final AtomicInteger idGenerator = new AtomicInteger(1);
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer BeerId;
@@ -23,11 +27,20 @@ public class Beers {
     public Beers() {
     };
 
-    public Beers(Integer beerId, Number price, String brand, ProductTypes productType) {
-        this.BeerId = beerId;
+    // public Beers(Integer beerId, Number price, String brand, ProductTypes
+    // productType) {
+    // this.BeerId = beerId;
+    // this.Price = price;
+    // this.Brand = brand;
+    // this.ProductType = productType;
+    // }
+
+    public Beers(Number price, String brand, String productTypeName) {
+
+        this.BeerId = idGenerator.getAndIncrement();
         this.Price = price;
         this.Brand = brand;
-        this.ProductType = productType;
+        this.ProductType = new ProductTypes(productTypeName);
     }
 
     // Getters and Setters

@@ -3,6 +3,7 @@ package com.kate.assignment.models.dtos;
 public class BeerDiscountRequest {
 
     private Integer beerId;
+    private String brand;
     private Integer beerQuantity;
 
     // getters and setters
@@ -12,6 +13,14 @@ public class BeerDiscountRequest {
 
     public void setBeerId(Integer beerId) {
         this.beerId = beerId;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public Integer getBeerQuantity() {

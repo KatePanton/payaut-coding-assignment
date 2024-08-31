@@ -20,6 +20,8 @@ public class BeerWithDiscount {
 
     public Number DiscountGiven;
 
+    public Number AmountPayable;
+
     public BeerWithDiscount(BeerWithDiscountInterface beerWithDiscountInterface) {
         this.BeerId = beerWithDiscountInterface.getBeerId();
         this.Brand = beerWithDiscountInterface.getBrand();
@@ -29,6 +31,7 @@ public class BeerWithDiscount {
         this.DiscountAmount = beerWithDiscountInterface.getDiscountAmount();
         this.BeerQuantity = beerWithDiscountInterface.getBeerQuantity();
         this.DiscountGiven = beerWithDiscountInterface.getDiscountGiven();
+        this.AmountPayable = beerWithDiscountInterface.getAmountPayable();
     }
 
     public void setDiscount(Integer beerQuantity) {
@@ -40,5 +43,6 @@ public class BeerWithDiscount {
 
         int discountMultiplier = beerQuantity / BottlesRequired;
         this.DiscountGiven = discountMultiplier * DiscountAmount.doubleValue();
+        this.AmountPayable = (Price.doubleValue() * beerQuantity) - DiscountGiven.doubleValue();
     }
 }

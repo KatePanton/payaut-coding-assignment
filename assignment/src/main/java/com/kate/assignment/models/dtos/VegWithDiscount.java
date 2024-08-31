@@ -17,6 +17,8 @@ public class VegWithDiscount {
 
     public Number DiscountGiven;
 
+    public Number AmountPayable;
+
     public VegWithDiscount(VegWithDiscountInterface vegWithDiscountInterface) {
         this.VegetableId = vegWithDiscountInterface.getVegetableId();
         this.Price = vegWithDiscountInterface.getPrice();
@@ -25,6 +27,7 @@ public class VegWithDiscount {
         this.DiscountPercentage = vegWithDiscountInterface.getDiscountPercentage();
         this.VegetableWeight = vegWithDiscountInterface.getVegetableWeight();
         this.DiscountGiven = vegWithDiscountInterface.getDiscountGiven();
+        this.AmountPayable = vegWithDiscountInterface.getAmountPayable();
     }
 
     public void setDiscount(Integer vegetableWeight, Number discountPercentage) {
@@ -35,5 +38,6 @@ public class VegWithDiscount {
         }
 
         this.DiscountGiven = discountPercentage;
+        this.AmountPayable = (Price.doubleValue() * vegetableWeight) * (1 - DiscountGiven.doubleValue());
     }
 }

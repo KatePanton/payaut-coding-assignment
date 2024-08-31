@@ -17,6 +17,8 @@ public class BreadWithDiscount {
 
     public Integer BreadQuantity;
 
+    public Number AmountPayable;
+
     public BreadWithDiscount(BreadWithDiscountInterface breadWithDiscountInterface) {
         this.BreadId = breadWithDiscountInterface.getBreadId();
         this.Price = breadWithDiscountInterface.getPrice();
@@ -25,6 +27,7 @@ public class BreadWithDiscount {
         this.ExtraQuantity = breadWithDiscountInterface.getExtraQuantity();
         this.BreadAge = breadWithDiscountInterface.getBreadAge();
         this.BreadQuantity = breadWithDiscountInterface.getBreadQuantity();
+        this.AmountPayable = breadWithDiscountInterface.getAmountPayable();
     }
 
     public void setDiscount(Integer breadAge, Integer breadQuantity, Integer extraQuantity) {
@@ -35,7 +38,7 @@ public class BreadWithDiscount {
             return;
         }
 
-        int additionalQuantity = extraQuantity * breadQuantity;
-        this.BreadQuantity = breadQuantity + additionalQuantity;
+        this.AmountPayable = (Price.doubleValue() * breadQuantity);
+        this.BreadQuantity = breadQuantity + (extraQuantity * breadQuantity);
     }
 }

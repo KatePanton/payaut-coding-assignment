@@ -30,4 +30,7 @@ public interface VegWithDiscountInterface {
 
     void setDiscountGiven(Number DiscountGiven);
 
+    Number getAmountPayable();
+
+    void setAmountPayable(Number AmountPayable);
 }
