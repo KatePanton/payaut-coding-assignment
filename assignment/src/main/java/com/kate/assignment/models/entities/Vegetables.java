@@ -12,11 +12,12 @@ public class Vegetables {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer VegetableId;
-    public Number Price;
 
     @ManyToOne
     @JoinColumn(name = "ProductTypeId", nullable = false)
     public ProductTypes ProductType;
+
+    public Number Price;
 
     // Constructors
     public Vegetables() {
@@ -37,20 +38,20 @@ public class Vegetables {
         return VegetableId;
     }
 
-    public void setPrice(Number Price) {
-        this.Price = Price;
-    }
-
-    public Number getPrice() {
-        return Price;
-    }
-
     public void setProductType(ProductTypes productType) {
         this.ProductType = productType;
     }
 
     public ProductTypes getProductType() {
         return ProductType;
+    }
+
+    public void setPrice(Number Price) {
+        this.Price = Price;
+    }
+
+    public Number getPrice() {
+        return Price;
     }
 
 }

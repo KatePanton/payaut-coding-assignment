@@ -2,16 +2,25 @@ package com.kate.assignment.models.dtos;
 
 public class BeerDiscountRequest {
 
-    private Integer beerId;
-    private Integer beerQuantity;
+    public Integer beerId;
+    public String brand;
+    public Integer beerQuantity;
 
-    // Getters and Setters
+    // getters and setters
     public Integer getBeerId() {
         return beerId;
     }
 
     public void setBeerId(Integer beerId) {
         this.beerId = beerId;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public Integer getBeerQuantity() {

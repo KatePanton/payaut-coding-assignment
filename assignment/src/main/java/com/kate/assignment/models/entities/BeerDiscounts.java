@@ -1,5 +1,7 @@
 package com.kate.assignment.models.entities;
 
+import com.kate.assignment.models.interfaces.BeerWithDiscountInterface;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,11 +26,10 @@ public class BeerDiscounts {
     public BeerDiscounts() {
     };
 
-    public BeerDiscounts(Integer beerDiscountId, Beers beer, Integer bottlesRequired, Number discountAmount) {
-        this.BeerDiscountId = beerDiscountId;
-        this.Beer = beer;
-        this.BottlesRequired = bottlesRequired;
-        this.DiscountAmount = discountAmount;
+    public BeerDiscounts(BeerWithDiscountInterface beerWithDiscountInterface) {
+        this.BeerDiscountId = beerWithDiscountInterface.getBeerDiscountId();
+        this.BottlesRequired = beerWithDiscountInterface.getBottlesRequired();
+        this.DiscountAmount = beerWithDiscountInterface.getDiscountAmount();
     }
 
     // Getters and Setters

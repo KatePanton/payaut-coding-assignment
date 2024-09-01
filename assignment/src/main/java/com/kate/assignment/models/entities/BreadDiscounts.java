@@ -17,18 +17,18 @@ public class BreadDiscounts {
     @JoinColumn(name = "BreadId", nullable = false)
     public Breads Bread;
 
-    public Integer DaysOld;
-    public Number DiscountPercentage;
+    public Number MaxAge;
+    public Integer ExtraQuantity;
 
     // Constructors
     public BreadDiscounts() {
     };
 
-    public BreadDiscounts(Integer breadDiscountId, Breads bread, Integer daysOld, Number discountPercentage) {
+    public BreadDiscounts(Integer breadDiscountId, Breads bread, Number maxAge, Integer extraQuantity) {
         this.BreadDiscountId = breadDiscountId;
         this.Bread = bread;
-        this.DaysOld = daysOld;
-        this.DiscountPercentage = discountPercentage;
+        this.MaxAge = maxAge;
+        this.ExtraQuantity = extraQuantity;
     }
 
     // Getters and Setters
@@ -48,20 +48,20 @@ public class BreadDiscounts {
         return Bread;
     }
 
-    public void setDaysOld(Integer daysOld) {
-        this.DaysOld = daysOld;
+    public void setMaxAge(Number maxAge) {
+        this.MaxAge = maxAge;
     }
 
-    public Integer getDaysOld() {
-        return DaysOld;
+    public Number getMaxAge() {
+        return MaxAge;
     }
 
-    public void setDiscountPercentage(Number discountPercentage) {
-        this.DiscountPercentage = discountPercentage;
+    public void setExtraQuantity(Integer extraQuantity) {
+        this.ExtraQuantity = extraQuantity;
     }
 
-    public Number getDiscountPercentage() {
-        return DiscountPercentage;
+    public Integer getExtraQuantity() {
+        return ExtraQuantity;
     }
 
 }

@@ -1,40 +1,48 @@
 package com.kate.assignment.models.dtos;
 
-public interface BeerWithDiscount {
+import com.kate.assignment.models.interfaces.BeerWithDiscountInterface;
 
-    Integer getBeerId();
+public class BeerWithDiscount {
 
-    void setBeerId(Integer BeerId);
+    public Integer BeerId;
 
-    String getBrand();
+    public String Brand;
 
-    void setBrand(String Brand);
+    public Number Price;
 
-    Number getPrice();
+    public Integer BeerDiscountId;
 
-    void setPrice(Number Price);
+    public Integer BottlesRequired;
 
-    Integer getBeerDiscountId();
+    public Number DiscountAmount;
 
-    void setBeerDiscountId(Integer BeerDiscountId);
+    public Number BeerQuantity;
 
-    Integer getBottlesRequired();
+    public Number DiscountGiven;
 
-    void setBottlesRequired(Integer BottlesRequired);
+    public Number AmountPayable;
 
-    Number getDiscountAmount();
-
-    void setDiscountAmount(Number DiscountAmount);
-
-    Number getDiscountGiven();
-
-    void setDiscountGiven(Number DiscountGiven);
-
-    default Number calculateDiscountGiven(Integer beerQuantity) {
-        Integer bottlesRequired = getBottlesRequired();
-        Number discountAmount = getDiscountAmount();
-        Number applicableDiscounts = beerQuantity / bottlesRequired;
-        return applicableDiscounts.doubleValue() * discountAmount.doubleValue();
+    public BeerWithDiscount(BeerWithDiscountInterface beerWithDiscountInterface) {
+        this.BeerId = beerWithDiscountInterface.getBeerId();
+        this.Brand = beerWithDiscountInterface.getBrand();
+        this.Price = beerWithDiscountInterface.getPrice();
+        this.BeerDiscountId = beerWithDiscountInterface.getBeerDiscountId();
+        this.BottlesRequired = beerWithDiscountInterface.getBottlesRequired();
+        this.DiscountAmount = beerWithDiscountInterface.getDiscountAmount();
+        this.BeerQuantity = beerWithDiscountInterface.getBeerQuantity();
+        this.DiscountGiven = beerWithDiscountInterface.getDiscountGiven();
+        this.AmountPayable = beerWithDiscountInterface.getAmountPayable();
     }
 
+    public void setDiscount(Integer beerQuantity) {
+        this.BeerQuantity = beerQuantity;
+        if (BottlesRequired == null || DiscountAmount == null) {
+            this.DiscountGiven = 0;
+            return;
+        }
+
+        int discountMultiplier = beerQuantity / BottlesRequired;
+        this.DiscountGiven = discountMultiplier * DiscountAmount.doubleValue();
+        this.AmountPayable = (Price.doubleValue() * beerQuantity) - DiscountGiven.doubleValue();
+    }
 }
