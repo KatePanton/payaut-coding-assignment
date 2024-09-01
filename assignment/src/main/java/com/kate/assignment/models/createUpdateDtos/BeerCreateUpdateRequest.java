@@ -1,4 +1,4 @@
-package com.kate.assignment.models.dtos;
+package com.kate.assignment.models.createUpdateDtos;
 
 public class BeerCreateUpdateRequest {
 

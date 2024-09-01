@@ -2,9 +2,9 @@ package com.kate.assignment.models.dtos;
 
 public class BeerDiscountRequest {
 
-    private Integer beerId;
-    private String brand;
-    private Integer beerQuantity;
+    public Integer beerId;
+    public String brand;
+    public Integer beerQuantity;
 
     // getters and setters
     public Integer getBeerId() {

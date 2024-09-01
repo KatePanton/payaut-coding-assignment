@@ -4,13 +4,16 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kate.assignment.models.dtos.BeerCreateUpdateRequest;
+import com.kate.assignment.models.createUpdateDtos.BeerCreateUpdateRequest;
+import com.kate.assignment.models.createUpdateDtos.BeerDiscountCreateUpdateRequest;
 import com.kate.assignment.models.dtos.BeerDiscountRequest;
 import com.kate.assignment.models.dtos.BeerWithDiscount;
+import com.kate.assignment.models.entities.Beers;
 import com.kate.assignment.services.BeerService;
 
 @RestController
@@ -23,37 +26,43 @@ public class BeerController {
         this.beerService = beerService;
     }
 
+    // Add
     @PostMapping("/addBeer")
     public String addBeer(@RequestBody BeerCreateUpdateRequest beerCreateUpdateRequest) {
         return beerService.addBeer(beerCreateUpdateRequest);
     }
 
-    // @PostMapping("/addBeerDiscount")
-    // public String addBeerDiscount(
-    // @RequestBody BeerDiscountCreateUpdateRequest beerDiscountCreateUpdateRequest)
-    // {
-    // return beerService.addBeerDiscount(beerDiscountCreateUpdateRequest);
-    // }
+    @PostMapping("/addBeerDiscount")
+    public String addBeerDiscount(
+            @RequestBody BeerDiscountCreateUpdateRequest beerDiscountCreateUpdateRequest) {
+        return beerService.addBeerDiscount(beerDiscountCreateUpdateRequest);
+    }
+
+    // Get
+    @GetMapping("/getBeerByBrand")
+    public Beers getBeerByBrand(@RequestBody BeerCreateUpdateRequest beerCreateUpdateRequest) {
+        return beerService.getBeerByBrand(beerCreateUpdateRequest.getBrand());
+    }
 
     @GetMapping("/getAll")
     public List<BeerWithDiscount> getAllBeers() {
         return beerService.getAllBeers();
     }
 
-    @GetMapping("/getDiscounts")
+    @GetMapping("/getDiscount")
     public List<BeerWithDiscount> getBeerDiscount(@RequestBody List<BeerDiscountRequest> beerDiscountRequests) {
         return beerService.getDiscount(beerDiscountRequests);
     }
 
-    // @PutMapping("/updateBeer")
-    // public Beers updateBeer(@RequestBody Beers beer) {
-    // return beerService.updateBeer(beer);
-    // }
+    // Update
+    @PutMapping("/updateBeer")
+    public String updateBeer(@RequestBody BeerCreateUpdateRequest beerCreateUpdateRequest) {
+        return beerService.updateBeer(beerCreateUpdateRequest);
+    }
 
-    // @PutMapping("/updateBeerDiscount")
-    // public BeerWithDiscount updateBeerDiscount(@RequestBody BeerDiscounts
-    // beerDiscount) {
-    // return beerService.updateBeerDiscount(beerDiscount);
-    // }
+    @PutMapping("/updateBeerDiscount")
+    public String updateBeerDiscount(@RequestBody BeerDiscountCreateUpdateRequest beerDiscountCreateUpdateRequest) {
+        return beerService.updateBeerDiscount(beerDiscountCreateUpdateRequest);
+    }
 
 }

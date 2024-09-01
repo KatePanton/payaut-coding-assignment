@@ -1,22 +1,8 @@
 package com.kate.assignment.models.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-
-@Entity
 public class Orders {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   public Integer OrderId;
-
-  @ManyToOne
-  @JoinColumn(name = "ProductTypeId", nullable = false)
   public ProductTypes ProductType;
-
   public Integer ProductId;
   public Integer Quantity;
   public Number TotalPrice;

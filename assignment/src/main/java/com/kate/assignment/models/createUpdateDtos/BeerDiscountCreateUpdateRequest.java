@@ -1,10 +1,12 @@
-package com.kate.assignment.models.dtos;
+package com.kate.assignment.models.createUpdateDtos;
 
 public class BeerDiscountCreateUpdateRequest {
 
     public Integer beerDiscountId;
 
     public Integer beerId;
+
+    public String beerBrand;
 
     public Integer bottlesRequired;
 
@@ -25,6 +27,14 @@ public class BeerDiscountCreateUpdateRequest {
 
     public void setBeerId(Integer beerId) {
         this.beerId = beerId;
+    }
+
+    public String getBeerBrand() {
+        return beerBrand;
+    }
+
+    public void setBeerBrand(String beerBrand) {
+        this.beerBrand = beerBrand;
     }
 
     public Integer getBottlesRequired() {
