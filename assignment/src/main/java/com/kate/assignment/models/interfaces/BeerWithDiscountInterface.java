@@ -2,6 +2,7 @@
 package com.kate.assignment.models.interfaces;
 
 public interface BeerWithDiscountInterface {
+
     Integer getBeerId();
 
     void setBeerId(Integer BeerId);

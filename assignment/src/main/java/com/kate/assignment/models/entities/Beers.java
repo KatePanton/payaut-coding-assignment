@@ -14,12 +14,13 @@ public class Beers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer BeerId;
-    public Number Price;
-    public String Brand;
 
     @ManyToOne
     @JoinColumn(name = "ProductTypeId", nullable = false)
     public ProductTypes ProductType;
+
+    public Number Price;
+    public String Brand;
 
     // Constructors
     public Beers() {
@@ -40,6 +41,14 @@ public class Beers {
         return BeerId;
     }
 
+    public void setProductType(ProductTypes productType) {
+        this.ProductType = productType;
+    }
+
+    public ProductTypes getProductType() {
+        return ProductType;
+    }
+
     public void setPrice(Number Price) {
         this.Price = Price;
     }
@@ -54,14 +63,6 @@ public class Beers {
 
     public String getBrand() {
         return Brand;
-    }
-
-    public void setProductType(ProductTypes productType) {
-        this.ProductType = productType;
-    }
-
-    public ProductTypes getProductType() {
-        return ProductType;
     }
 
 }

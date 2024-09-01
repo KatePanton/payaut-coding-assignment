@@ -1,6 +1,7 @@
 package com.kate.assignment.models.interfaces;
 
 public interface BreadWithDiscountInterface {
+
     Integer getBreadId();
 
     void setBreadId(Integer BreadId);
@@ -32,4 +33,5 @@ public interface BreadWithDiscountInterface {
     Number getAmountPayable();
 
     void setAmountPayable(Number AmountPayable);
+
 }

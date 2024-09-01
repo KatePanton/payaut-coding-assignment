@@ -2,6 +2,7 @@
 package com.kate.assignment.models.interfaces;
 
 public interface VegWithDiscountInterface {
+
     Integer getVegetableId();
 
     void setVegetableId(Integer VegetableId);
@@ -33,4 +34,5 @@ public interface VegWithDiscountInterface {
     Number getAmountPayable();
 
     void setAmountPayable(Number AmountPayable);
+
 }

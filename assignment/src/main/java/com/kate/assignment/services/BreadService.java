@@ -45,7 +45,6 @@ public class BreadService {
         var discountDetails = getDiscountDetails(breadId, breadAge);
 
         discountDetails.setDiscount(breadAge, breadQuantity, discountDetails.ExtraQuantity);
-
         return discountDetails;
     }
 }

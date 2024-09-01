@@ -12,11 +12,12 @@ public class Breads {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer BreadId;
-    public Number Price;
 
     @ManyToOne
     @JoinColumn(name = "ProductTypeId", nullable = false)
     public ProductTypes ProductType;
+
+    public Number Price;
 
     // Constructors
     public Breads() {
@@ -24,13 +25,21 @@ public class Breads {
 
     public Breads(Integer breadId, Number price, ProductTypes productType) {
         this.BreadId = breadId;
-        this.Price = price;
         this.ProductType = productType;
+        this.Price = price;
     }
 
     // Getters and Setters
     public void setBreadId(Integer breadId) {
         this.BreadId = breadId;
+    }
+
+    public void setProductType(ProductTypes productType) {
+        this.ProductType = productType;
+    }
+
+    public ProductTypes getProductType() {
+        return ProductType;
     }
 
     public Integer getBreadId() {
@@ -43,14 +52,6 @@ public class Breads {
 
     public Number getPrice() {
         return Price;
-    }
-
-    public void setProductType(ProductTypes productType) {
-        this.ProductType = productType;
-    }
-
-    public ProductTypes getProductType() {
-        return ProductType;
     }
 
 }
