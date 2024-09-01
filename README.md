@@ -68,25 +68,25 @@ This project can:
 
 ### Project Structure
 Follows a Repository Pattern.
-**Api endpoints** are found in controllers.
-**Controllers** call a service.
-**Services** are responsible for the bulk of the logic and data manipulation.
-Services call a **repository** which returns data from the database.
-All of these integrate with **models**. These are the different types of models:
-
- - **entities**: determine the structure of the database tables and generic object.
-   **dtos**: Data Transfer Objects are used to combine results from multiple database tables, or to declare api request structures. The
-   "*WithDiscount*" DTOs are also responsible for calculating and
-   setting the final discountGiven and AmountPayable.
-   **interfaces**: these are used to convert the results of the repository database call into a dto that can be used in the service
-   layer.
-   **createUpdateDtos**: DTOs specifically for creating new objects or updating existing object is database tables.
+- **Api endpoints** are found in controllers.
+- **Controllers** call a service.
+- **Services** are responsible for the bulk of the logic and data manipulation.
+- Services call a **repository** which returns data from the database.
+- All of these integrate with **models**. These are the different types of models:
+	- **entities**: determine the structure of the database tables and generic object.
+	- **dtos**: Data Transfer Objects are used to combine results from multiple database tables, or to declare api request structures. The "*WithDiscount*" DTOs are also responsible for calculating and setting the final discountGiven and AmountPayable.
+	- **interfaces**: these are used to convert the results of the repository database call into a dto that can be used in the service layer.
+	- **createUpdateDtos**: DTOs specifically for creating new objects or updating existing object is database tables.
 
 ### Design Decisions
 **Why Springboot & Java:** I thought I would try to do the project in the language and framework that I would use at Payaut. I hope to show my willingness to learn new technologies, and that I am able to pick up said technologies fairly quickly.
+
 **Maven vs Gradle:** Maven was the suggested build tool when setting up a new project through Apache Netbeans.
+
 **Why Repository Pattern:** I am familiar and comfortable with this way of structuring my code. One less new thing to try and learn.
+
 **Why SQLite:**  I am familiar and comfortable with SQL. I tried to create a SQL server database but struggled quite a lot with the integration, so I tried SQLite which was easier to get working.
+
 **Why no unit tests:** I tried to make some unit tests - both with the auto-create through NetBeans and the Internet - but I wasn't able to get them working, let alone be actual good tests of the code.
 
 ### Challenges
