@@ -1,4 +1,4 @@
-# Order API call:
+# Vegetables API call:
 
 ### /vegetables/getAll
     { }
