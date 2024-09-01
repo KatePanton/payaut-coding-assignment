@@ -23,9 +23,11 @@ This project can:
  - For Product Type Breads:
 	 - Get all breads in the Breads Table
 	 - Get the discounts applicable for one or more breads
+	 - [Bread Endpoints](ReadMes/BreadEndpoints.md)
  - For Product Type Vegetables:
 	 - Get all vegetables in the Vegetables Table
 	 - Get the discounts applicable for one or more vegetables
+	 - [Vegetable Endpoints](ReadMes/VegetableEndpoints.md)
 - For Orders
 	- Return an order with a breakdown of each Beer, Bread, and Vegetable items price and discount, as well as the total amount payable for the order.
 	- [Order Endpoint](ReadMes/OrderEndpoint.md)
@@ -60,9 +62,9 @@ This project can:
 
  - Code editing: VS Code, Apache NetBeans, Cursor
  - API Testing: Insomnia
- - Database visualisation: SQLiteStudio
+ - Database visualization: SQLiteStudio
  - Version control: Git
- - Planning: Draw.io - [Planning Doc](Payaut.drawio)
+ - Planning: Draw.io - [Planning Doc](planning.svg)
 
 ### Project Structure
 Follows a Repository Pattern.
@@ -78,14 +80,14 @@ All of these integrate with **models**. These are the different types of models:
    setting the final discountGiven and AmountPayable.
    **interfaces**: these are used to convert the results of the repository database call into a dto that can be used in the service
    layer.
-   **createUpdateDtos**: DTOs specifically for creating new objects or updating exsisting object is database tables.
+   **createUpdateDtos**: DTOs specifically for creating new objects or updating existing object is database tables.
 
 ### Design Decisions
-**Why Springboot & Java:** Thought I would try to do the project in the language and framework that I would use at Payaut. I hope to show my willingness to learn new technologies, and that I am able to pick up said technologies fairly quickly.
+**Why Springboot & Java:** I thought I would try to do the project in the language and framework that I would use at Payaut. I hope to show my willingness to learn new technologies, and that I am able to pick up said technologies fairly quickly.
 **Maven vs Gradle:** Maven was the suggested build tool when setting up a new project through Apache Netbeans.
-**Why Repository Pattern:** I am familiar and comfotable with this way of structuring my code. One less new thing to try and learn.
-**Why SQLite:**  I am familiar and comfotable with SQL. I tried to create a SQL server database but struggled quite a lot with the integration, so I tried SQLite which was easier to get working.
-**Why no unit tests:** I tried to make some unit tests - both with the auto-create through NetBeans and the Internet - but I wasnt able to get them working, let alone be actual good tests of the code.
+**Why Repository Pattern:** I am familiar and comfortable with this way of structuring my code. One less new thing to try and learn.
+**Why SQLite:**  I am familiar and comfortable with SQL. I tried to create a SQL server database but struggled quite a lot with the integration, so I tried SQLite which was easier to get working.
+**Why no unit tests:** I tried to make some unit tests - both with the auto-create through NetBeans and the Internet - but I wasn't able to get them working, let alone be actual good tests of the code.
 
 ### Challenges
 - Learning Java and Springboot.
